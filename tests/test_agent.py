@@ -108,6 +108,12 @@ class AgentTests(unittest.TestCase):
         for text in ['0 sardinas', '-1 sardinas', '1000 sardinas', '2 sardinas extra']:
             self.agent.reply('A', text)
             self.assertNotIn('A', self.agent.pending)
+    def test_big_order(self):
+        self.tools.prices['sardines'] = 2100000
+        q = self.propose('1 sardinas')
+        for n in (0, 1):
+            self.agent.reply('A', 'CONFIRM ' + q)
+            self.assertEqual(len(self.tools.orders), n)
 
 
 if __name__ == '__main__':

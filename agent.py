@@ -53,7 +53,12 @@ class Agent:
                 if self.completed.get(owner, {}).get('quote_id') == qid:
                     return f"Already placed: {self.completed[owner]['id']}. No duplicate order."
                 return 'No matching pending quote. Please request an order first.'
+            if q['total'] > 2000000 and not q.get('confirmed_once'):
+                q['confirmed_once'] = True
+                return f"Please CONFIRM {qid} again."
+            
             try:
+                
                 order = self.tools.place_order(owner, qid)
             except ToolError as exc:
                 self.pending.pop(owner, None)
@@ -85,3 +90,5 @@ class Agent:
         lines += [f"Total: {money(q['total'])}. No delivery fee or extra tax in this mock.",
                   f"Valid for 5 minutes, subject to stock and price recheck. Reply CONFIRM {q['id']} to place, or CANCEL."]
         return '\n'.join(lines)
+
+
