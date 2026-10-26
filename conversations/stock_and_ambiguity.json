@@ -1,0 +1,21 @@
+{
+  "turns": [
+    {
+      "text": "6 noodles",
+      "expect": "Only 5"
+    },
+    {
+      "text": "2 cases kape",
+      "expect": "clarify"
+    },
+    {
+      "text": "2 kopiko brown",
+      "expect": "PHP 16.00"
+    },
+    {
+      "text": "oo",
+      "expect": "exact quote ID"
+    }
+  ],
+  "orders": 0
+}

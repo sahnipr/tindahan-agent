@@ -1,0 +1,19 @@
+{
+  "turns": [
+    {
+      "photos": [
+        "empty-shelf.jpg"
+      ],
+      "expect": "type product"
+    },
+    {
+      "text": "2 cans sardinas",
+      "expect": "was stale"
+    },
+    {
+      "text": "cancel",
+      "expect": "Cancelled"
+    }
+  ],
+  "orders": 0
+}

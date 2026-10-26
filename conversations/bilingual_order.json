@@ -1,0 +1,17 @@
+{
+  "turns": [
+    {
+      "text": "pabili po 2 sardinas at 3 kopiko brown",
+      "expect": "PHP 76.00"
+    },
+    {
+      "text": "CONFIRM {quote_id}",
+      "expect": "Order placed"
+    },
+    {
+      "text": "CONFIRM {quote_id}",
+      "expect": "No duplicate"
+    }
+  ],
+  "orders": 1
+}
